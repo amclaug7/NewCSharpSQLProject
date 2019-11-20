@@ -50,7 +50,7 @@ namespace NewDatabaseProject
                                     mileage = int.Parse(tbxMileage.Text);
 
                                     string query = $"insert into inventory values('{vin}','{color}','{make}','{model}','{trim}',{year},{mileage},0);";
-                                    DataTable newCarTable = Filler.DataTableFiller(query);
+                                    Filler.InserterDeleter(query);
 
                                     DataViewControl dvc = new DataViewControl();
                                     this.Hide();

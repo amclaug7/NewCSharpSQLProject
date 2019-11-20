@@ -13,7 +13,7 @@ namespace NewDatabaseProject
 
         int customerID;
         int inventoryID;
-        int price;
+        decimal price;
 
         private void AddSale_Load(object sender, EventArgs e)
         {
@@ -70,7 +70,7 @@ namespace NewDatabaseProject
                 {
                     string vin = this.inventoryGrid.CurrentRow.Cells[0].Value.ToString();
                     Int64 telephone = Int64.Parse(this.customerGrid.CurrentRow.Cells[2].Value.ToString());
-                    decimal price = decimal.Parse(tbxPrice.Text);
+                    price = decimal.Parse(tbxPrice.Text);
 
                     string query = "select inventoryID " +
                                    "from inventory " +
@@ -97,7 +97,7 @@ namespace NewDatabaseProject
                     string salesquery = $"insert into sales values({inventoryID},{customerID},{price}); " +
                                         $"update inventory set sold = 1 where inventoryID = {inventoryID};";
 
-                    DataTable sdtbl = Filler.DataTableFiller(salesquery);
+                    Filler.InserterDeleter(salesquery);
 
                     DataViewControl dvc = new DataViewControl();
                     this.Hide();

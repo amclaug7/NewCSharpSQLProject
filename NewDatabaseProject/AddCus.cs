@@ -35,8 +35,8 @@ namespace NewDatabaseProject
                                     email = tbxEmail.Text;
                                     phoneno = Int64.Parse(tbxAreaCode.Text + tbxPhoneNo.Text);
 
-                                    string query = $"insert into customer values('{lastname}','{firstname}','{email}',{phoneno});";
-                                    DataTable addCusDataTable = Filler.DataTableFiller(query);
+                                    string query = $"insert into customer values('{lastname}','{firstname}','{email}',{phoneno});";                                   
+                                    Filler.InserterDeleter(query);
 
                                     DataViewControl dvc = new DataViewControl();
                                     this.Hide();

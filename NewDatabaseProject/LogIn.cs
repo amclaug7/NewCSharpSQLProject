@@ -13,10 +13,11 @@ namespace NewDatabaseProject
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            var f = new NewAccountCreation();
+            NewAccountCreation nac = new NewAccountCreation();
 
             this.Hide();
-            f.ShowDialog();
+            nac.ShowDialog();
+            nac.Dispose();
             this.Close();
         }
 
@@ -46,10 +47,11 @@ namespace NewDatabaseProject
                     }
                     else
                     {
-                        var f = new DataViewControl();
+                        DataViewControl dvc = new DataViewControl();
 
                         this.Hide();
-                        f.ShowDialog();
+                        dvc.ShowDialog();
+                        dvc.Dispose();
                         this.Close();
                     }
                 }

@@ -89,15 +89,16 @@ namespace NewDatabaseProject
 
                     string queryCreateAccount = $"insert into account values('{g.GetUsername()}','{Encryption.sha256(g.GetPassword())}');";
 
-                    DataTable Accountdtbl = Filler.DataTableFiller(queryCreateAccount);
+                    Filler.InserterDeleter(queryCreateAccount);
 
                     MessageBox.Show("Account Created", "New", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
-                    var f = new LogIn();
+                    LogIn li = new LogIn();
 
                     this.Hide();
-                    f.ShowDialog();
+                    li.ShowDialog();
+                    li.Dispose();
                     this.Close();
                 }
             }
@@ -105,10 +106,11 @@ namespace NewDatabaseProject
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            var f = new LogIn();
+            LogIn li = new LogIn();
 
             this.Hide();
-            f.ShowDialog();
+            li.ShowDialog();
+            li.Dispose();
             this.Close();
         }
     }

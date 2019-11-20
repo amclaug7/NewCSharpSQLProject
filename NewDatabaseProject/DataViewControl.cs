@@ -20,10 +20,11 @@ namespace NewDatabaseProject
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            LogIn f = new LogIn();
+            LogIn li = new LogIn();
 
             this.Hide();
-            f.ShowDialog();
+            li.ShowDialog();
+            li.Dispose();
             this.Close();
         }
 
@@ -52,8 +53,10 @@ namespace NewDatabaseProject
         private void btnAddInventory_Click(object sender, EventArgs e)
         {
             AddInv av = new AddInv();
+
             this.Hide();
             av.ShowDialog();
+            av.Dispose();
             this.Close();
         }
 
@@ -65,7 +68,7 @@ namespace NewDatabaseProject
                 string vin = inventoryGrid.CurrentRow.Cells[0].Value.ToString();
 
                 string query = $"delete from inventory where vin = '{vin}';";
-                DataTable DelInv = Filler.DataTableFiller(query);
+                Filler.InserterDeleter(query);
 
                 inventoryGrid.Rows.Clear();
                 fillInventoryDataTable();
@@ -97,8 +100,10 @@ namespace NewDatabaseProject
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             AddCus ac = new AddCus();
+
             this.Hide();
             ac.ShowDialog();
+            ac.Dispose();
             this.Close();
         }
 
@@ -110,7 +115,7 @@ namespace NewDatabaseProject
                 string no = customerGrid.CurrentRow.Cells[2].Value.ToString();
 
                 string query = $"delete from customer where telephone = {no};";
-                DataTable DelCus = Filler.DataTableFiller(query);
+                Filler.InserterDeleter(query);
 
                 customerGrid.Rows.Clear();
                 fillCustomerDataTable();
@@ -143,8 +148,10 @@ namespace NewDatabaseProject
         private void btnAddSales_Click(object sender, EventArgs e)
         {
             AddSale adds = new AddSale();
+
             this.Hide();
             adds.ShowDialog();
+            adds.Dispose();
             this.Close();
         }
     }
