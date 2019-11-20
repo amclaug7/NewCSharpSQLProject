@@ -43,6 +43,8 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddSale = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbxPrice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerGrid)).BeginInit();
             this.SuspendLayout();
@@ -155,7 +157,7 @@
             // 
             // btnAddSale
             // 
-            this.btnAddSale.Location = new System.Drawing.Point(107, 420);
+            this.btnAddSale.Location = new System.Drawing.Point(303, 426);
             this.btnAddSale.Name = "btnAddSale";
             this.btnAddSale.Size = new System.Drawing.Size(75, 23);
             this.btnAddSale.TabIndex = 4;
@@ -165,7 +167,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(265, 420);
+            this.btnExit.Location = new System.Drawing.Point(448, 426);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 5;
@@ -173,11 +175,29 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(64, 432);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Price:";
+            // 
+            // tbxPrice
+            // 
+            this.tbxPrice.Location = new System.Drawing.Point(101, 429);
+            this.tbxPrice.Name = "tbxPrice";
+            this.tbxPrice.Size = new System.Drawing.Size(100, 20);
+            this.tbxPrice.TabIndex = 7;
+            // 
             // AddSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 453);
+            this.ClientSize = new System.Drawing.Size(669, 476);
+            this.Controls.Add(this.tbxPrice);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAddSale);
             this.Controls.Add(this.customerGrid);
@@ -188,6 +208,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventoryGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerGrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -208,5 +229,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastname;
         private System.Windows.Forms.DataGridViewTextBoxColumn telephone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbxPrice;
     }
 }

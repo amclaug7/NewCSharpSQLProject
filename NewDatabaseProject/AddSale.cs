@@ -76,6 +76,7 @@ namespace NewDatabaseProject
                 {
                     string vin = this.inventoryGrid.CurrentRow.Cells[0].Value.ToString();
                     Int64 telephone = Int64.Parse(this.customerGrid.CurrentRow.Cells[2].Value.ToString());
+                    decimal price = decimal.Parse(tbxPrice.Text);
 
                     string query = "select inventoryID " +
                                    "from inventory " +
@@ -99,7 +100,7 @@ namespace NewDatabaseProject
                         customerID = int.Parse(row["customerID"].ToString().Trim());
                     }
 
-                    string salesquery = $"insert into sales values({inventoryID},{customerID},3000); " +
+                    string salesquery = $"insert into sales values({inventoryID},{customerID},{price}); " +
                                         $"update inventory set sold = 1 where inventoryID = {inventoryID};";
 
                     DataTable sdtbl = Filler.DataTableFiller(salesquery);
